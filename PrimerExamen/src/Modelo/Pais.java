@@ -5,30 +5,22 @@
  */
 package Modelo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Che
  */
 public class Pais {
     
-    String nombre,codigo,cantidadLimitada;
+    String nombre,codigo;
+    int cantidadLimitada,refugiados;
 
-    public Pais(String nombre, String codigo, String cantidadLimitada) {
+    public Pais(String nombre, String codigo, int cantidadLimitada, int refugiados) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.cantidadLimitada = cantidadLimitada;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public void setCantidadLimitada(String cantidadLimitada) {
-        this.cantidadLimitada = cantidadLimitada;
+        this.refugiados = refugiados;
     }
 
     public String getNombre() {
@@ -39,13 +31,49 @@ public class Pais {
         return codigo;
     }
 
-    public String getCantidadLimitada() {
+    public int getCantidadLimitada() {
         return cantidadLimitada;
     }
 
-    @Override
-    public String toString() {
-        return "Pais{" + "nombre=" + nombre + ", codigo=" + codigo + ", cantidadLimitada=" + cantidadLimitada + '}';
+    public int getRefugiados() {
+        return refugiados;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setCantidadLimitada(int cantidadLimitada) {
+        this.cantidadLimitada = cantidadLimitada;
+    }
+
+    public void setRefugiados(int refugiados) {
+        this.refugiados = refugiados;
+    }
+    
+    
+    public int cantidadMaxima(){
+        
+       
+        if(cantidadLimitada==0){
+            JOptionPane.showMessageDialog(null,"no es posible");
+        }else{
+             cantidadLimitada--;
+        }
+        return cantidadLimitada;
+    }
+   
+    public int cantidadRefugiado(){
+        if((cantidadLimitada==0)&& (refugiados==0)){
+           JOptionPane.showMessageDialog(null," No es posible,ya no existe campo");
+         }else{
+              refugiados--;
+        }
+        return refugiados;
     }
     
 }

@@ -19,9 +19,56 @@ public class ArrayPais {
            arrayPais=new ArrayList<Pais>();
        }
        
-       public void agregarPais(Pais pais){
-           arrayPais.add(pais);
-       }
+       public String agregarPais(Pais pais) throws PaisException {
+
+        if (verificarCodigo(pais.getCodigo())) 
+            throw new PaisException(
+                    "Ya existe un apis con ese numero de codigo",
+                    false);
+        
+        arrayPais.add(pais);
+        return "Se agrego con exito";
+    }
+
        
+       public Pais buscarPais(String codigo) {
+
+       Pais dev = null;
+        if (arrayPais.size() != 0) {
+
+            for (Pais pais:arrayPais) {
+                if (pais.getCodigo().equalsIgnoreCase(codigo)) {
+
+                    dev =pais;
+                    break;
+
+                }
+            }
+
+        }
+        return dev;
+    }
        
+        public boolean verificarCodigo(String codigo) {
+
+        boolean dev = false;
+        if (arrayPais.size() != 0) {
+
+            for (int i = 0; i < arrayPais.size(); i++) {
+                if (arrayPais.get(i).getCodigo().equalsIgnoreCase(codigo)) {
+
+                    dev = true;
+
+                    break;
+
+                }
+            }
+
+        }
+        return dev;
+    }
+        
+        public int tamano(){
+            return arrayPais.size();
+        }
 }
