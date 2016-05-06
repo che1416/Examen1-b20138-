@@ -54,7 +54,7 @@ public class Pais {
     public void setRefugiados(int refugiados) {
         this.refugiados = refugiados;
     }
-    
+
     
     public int cantidadMaxima(){
         
@@ -63,16 +63,16 @@ public class Pais {
             JOptionPane.showMessageDialog(null,"no es posible");
         }else{
              cantidadLimitada--;
-        }
+    }
         return cantidadLimitada;
     }
-   
+
     public int cantidadRefugiado(){
         if((cantidadLimitada==0)&& (refugiados==0)){
            JOptionPane.showMessageDialog(null," No es posible,ya no existe campo");
          }else{
               refugiados--;
-        }
+    }
         return refugiados;
     }
     
