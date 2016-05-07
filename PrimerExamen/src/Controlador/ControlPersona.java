@@ -32,7 +32,7 @@ public class ControlPersona implements ActionListener{
             if(guardar.obtenerProcedencia().equals("")||guardar.obtenerId().equals("")||guardar.obtenerDias().equals("")){
                 guardar.setMensaje("deben estar todos los campos llenos");
             }else{
-                persona=new Persona(guardar.obtenerProcedencia(),guardar.obtenerId(),guardar.obtenerDias());
+                persona=new Persona(guardar.asignarProcedencia(),guardar.obtenerId(),guardar.obtenerDias());
                 try {
                     arrayP.agregarPersona(persona);
                 } catch (IdException ex) {

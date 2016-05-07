@@ -31,6 +31,7 @@ public class ControlPrincipal implements ActionListener{
       Persona persona;
       Pais pais;
       Random r;
+      GuardarPersona guardar;
     Principal principal;
       Hashtable tab=new Hashtable();
           
@@ -76,11 +77,13 @@ public class ControlPrincipal implements ActionListener{
                           tab.put(pais,persona);
                      }
                  }
-               // if(pais.getCantidadLimitada()==0)
+              
                  num=r.nextInt(arrayP.tamano());
-                 //no me acepto llamar para obtener el numero de intercambios
+                
                  for(int x=0;x<principal.ObtenerInter();x++){
-                     
+                     if(pais.cantidadMaxima()==0){
+                         JOptionPane.showMessageDialog(null,"Se han agotado los ingresos");
+                      }
                        tab.containsKey(num);
                      contador++;
                   }

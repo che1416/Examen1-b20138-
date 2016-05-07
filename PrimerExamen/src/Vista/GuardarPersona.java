@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControlPersona;
+import Controlador.VerficacionProcedencia;
 
 /**
  *
@@ -17,6 +18,7 @@ public class GuardarPersona extends javax.swing.JFrame {
      * Creates new form GuardarPersona
      */
     ControlPersona control;
+    VerficacionProcedencia verifica;
     public GuardarPersona() {
         initComponents();
         this.JB_agregar.addActionListener(control);
@@ -44,6 +46,27 @@ public class GuardarPersona extends javax.swing.JFrame {
     
     public void setMensaje(String mensaje){
         this.JL_mensaje.setText(mensaje);
+    }
+    
+    public String asignarProcedencia(){
+        
+        String ciudadano="";
+        String indigena="";
+        String refugiado="";
+        String migrante="";
+        if(verifica.validaCiudadano(this.JT_procedencia.getText())){
+           this.establecerProcedencia(ciudadano);
+        }
+         if(verifica.validaIndigena(this.JT_procedencia.getText())){
+           this.establecerProcedencia(indigena);
+        }
+          if(verifica.validaRefugiado(this.JT_procedencia.getText())){
+           this.establecerProcedencia(refugiado);
+        }
+           if(verifica.validaMigrante(this.JT_procedencia.getText())){
+           this.establecerProcedencia(migrante);
+        }
+        return this.JT_procedencia.getText();
     }
     /**
      * This method is called from within the constructor to initialize the form.
