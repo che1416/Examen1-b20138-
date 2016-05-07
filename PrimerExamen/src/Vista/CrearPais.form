@@ -26,19 +26,28 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_nombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_codigo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_capacidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_capacidadR" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JB_guardar" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="JT_refugiados" alignment="0" pref="87" max="32767" attributes="0"/>
-                  <Component id="JT_capacidad" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JT_codigo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JT_nombre" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="JT_refugiados" alignment="0" pref="87" max="32767" attributes="0"/>
+                          <Component id="JT_capacidad" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JT_codigo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JT_nombre" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="JL_mensaje" pref="175" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="183" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,48 +56,53 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_nombre" min="-2" max="-2" attributes="0"/>
                   <Component id="JT_nombre" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JT_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_capacidad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JT_capacidad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_capacidadR" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="JT_refugiados" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="133" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="JB_guardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JL_mensaje" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="JL_nombre">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="JL_codigo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="Codigo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="JL_capacidad">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
+        <Property name="text" type="java.lang.String" value="Capacidad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="JL_capacidadR">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel4"/>
+        <Property name="text" type="java.lang.String" value="Capacidad Refugiados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JT_nombre">
@@ -96,11 +110,18 @@
     <Component class="javax.swing.JTextField" name="JT_codigo">
     </Component>
     <Component class="javax.swing.JTextField" name="JT_capacidad">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JT_capacidadActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="JT_refugiados">
+    </Component>
+    <Component class="javax.swing.JButton" name="JB_guardar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Guardar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="JL_mensaje">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mensaje"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

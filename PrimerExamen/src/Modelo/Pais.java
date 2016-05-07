@@ -56,24 +56,24 @@ public class Pais {
     }
 
     
-    public int cantidadMaxima(){
-        
-       
-        if(cantidadLimitada==0){
-            JOptionPane.showMessageDialog(null,"no es posible");
-        }else{
-             cantidadLimitada--;
-    }
-        return cantidadLimitada;
-    }
-
-    public int cantidadRefugiado(){
-        if((cantidadLimitada==0)&& (refugiados==0)){
-           JOptionPane.showMessageDialog(null," No es posible,ya no existe campo");
-         }else{
-              refugiados--;
-    }
-        return refugiados;
-    }
+//    public int cantidadMaxima(){ control
+//        
+//       
+//        if(cantidadLimitada==0){
+//            JOptionPane.showMessageDialog(null,"no es posible");
+//        }else{
+//             cantidadLimitada--;
+//    }
+//        return cantidadLimitada;
+//    }
+//
+//    public int cantidadRefugiado(){
+//        if((cantidadLimitada==0)&& (refugiados==0)){
+//           JOptionPane.showMessageDialog(null," No es posible,ya no existe campo");
+//         }else{
+//              refugiados--;
+//    }
+//        return refugiados;
+//    }
     
 }

@@ -71,4 +71,14 @@ public class ArrayPersona {
         public int tamano(){
             return arrayP.size();
         }
+
+    public ArrayList<Persona> getArrayP() {
+        return arrayP;
+    }
+
+    public void setArrayP(ArrayList<Persona> arrayP) {
+        this.arrayP = arrayP;
+    }
+        
+        
 }

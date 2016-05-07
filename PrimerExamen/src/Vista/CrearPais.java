@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ControlPais;
+import Controlador.VerificacionPais;
+import Modelo.ArrayPais;
 
 /**
  *
@@ -14,8 +17,15 @@ public class CrearPais extends javax.swing.JFrame {
     /**
      * Creates new form CrearPais
      */
+    ControlPais control;
+    VerificacionPais verifica;
+    ArrayPais pais;
     public CrearPais() {
         initComponents();
+        control=new ControlPais(pais,this);
+        this.JB_guardar.addActionListener(control);
+         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
     }
 
     /**
@@ -27,30 +37,30 @@ public class CrearPais extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        JL_nombre = new javax.swing.JLabel();
+        JL_codigo = new javax.swing.JLabel();
+        JL_capacidad = new javax.swing.JLabel();
+        JL_capacidadR = new javax.swing.JLabel();
         JT_nombre = new javax.swing.JTextField();
         JT_codigo = new javax.swing.JTextField();
         JT_capacidad = new javax.swing.JTextField();
         JT_refugiados = new javax.swing.JTextField();
+        JB_guardar = new javax.swing.JButton();
+        JL_mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        JL_nombre.setText("Nombre");
 
-        jLabel2.setText("jLabel2");
+        JL_codigo.setText("Codigo");
 
-        jLabel3.setText("jLabel3");
+        JL_capacidad.setText("Capacidad");
 
-        jLabel4.setText("jLabel4");
+        JL_capacidadR.setText("Capacidad Refugiados");
 
-        JT_capacidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JT_capacidadActionPerformed(evt);
-            }
-        });
+        JB_guardar.setText("Guardar");
+
+        JL_mensaje.setText("Mensaje");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,93 +69,107 @@ public class CrearPais extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(JL_nombre)
+                    .addComponent(JL_codigo)
+                    .addComponent(JL_capacidad)
+                    .addComponent(JL_capacidadR)
+                    .addComponent(JB_guardar))
                 .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(JT_refugiados, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                    .addComponent(JT_capacidad)
-                    .addComponent(JT_codigo)
-                    .addComponent(JT_nombre))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JT_refugiados, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                            .addComponent(JT_capacidad)
+                            .addComponent(JT_codigo)
+                            .addComponent(JT_nombre))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JL_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addGap(22, 22, 22))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                    .addComponent(JL_nombre)
                     .addComponent(JT_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(JL_codigo)
                     .addComponent(JT_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(JL_capacidad)
                     .addComponent(JT_capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(JL_capacidadR)
                     .addComponent(JT_refugiados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_guardar)
+                    .addComponent(JL_mensaje))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JT_capacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JT_capacidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JT_capacidadActionPerformed
-    
+    public void establecerCapacidad(int capacidad){
+        this.JT_capacidad.setText(""+capacidad);
+    }
     public int obtenerCapacidad(){
         return Integer.parseInt(this.JT_capacidad.getText());
     }
+    public void establecerNombre(String nombre){
+        this.JT_nombre.setText(nombre);
+    }
+    public String  obtenerNombre(){
+        return this.JT_nombre.getText();
+    }
+     public void establecerCodigo(String codigo){
+        this.JT_codigo.setText(codigo);
+    }
+    public String  obtenerCodigo(){
+        return this.JT_codigo.getText();
+    }
+     public void establecerR(int capacidadR){
+        this.JT_refugiados.setText(""+capacidadR);
+    }
+    public int obtenerR(){
+        return Integer.parseInt(this.JT_refugiados.getText());
+    }
+    
+    
+     public boolean verificarCodigo() {
+        boolean codigo=verifica.validaCodigo(this.JT_codigo.getText());
+        
+        if(!codigo){
+            setMensaje(" El formato es P y cuatro digitos");
+        }
+        return !codigo;
+    }
+    
+    
+    public void setMensaje(String mensaje){
+         this.JL_mensaje.setText(mensaje);
+    }
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CrearPais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CrearPais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CrearPais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CrearPais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CrearPais().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_guardar;
+    private javax.swing.JLabel JL_capacidad;
+    private javax.swing.JLabel JL_capacidadR;
+    private javax.swing.JLabel JL_codigo;
+    private javax.swing.JLabel JL_mensaje;
+    private javax.swing.JLabel JL_nombre;
     private javax.swing.JTextField JT_capacidad;
     private javax.swing.JTextField JT_codigo;
     private javax.swing.JTextField JT_nombre;
     private javax.swing.JTextField JT_refugiados;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

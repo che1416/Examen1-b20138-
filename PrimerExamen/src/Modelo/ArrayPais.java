@@ -71,4 +71,15 @@ public class ArrayPais {
         public int tamano(){
             return arrayPais.size();
         }
+
+    public ArrayList<Pais> getArrayPais() {
+        return arrayPais;
+    }
+
+    public void setArrayPais(ArrayList<Pais> arrayPais) {
+        this.arrayPais = arrayPais;
+    }
+
+
+
 }
